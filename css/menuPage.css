@@ -254,10 +254,11 @@ aside{
     transition: 0.5s ease-in-out;
 }
 .items:hover{
+    transform: scale(1.05);
     transition: 0.5s ease-in-out;
     box-shadow: 0 0 5px #ff88009b;
 }
-img{
+#menuPic{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -565,9 +566,55 @@ box-shadow: inset 0 0 0 2px #FF8900;
 
 }
 }
+/*main menu page end here */
+
+/*when click on any items items details desing start from here*/
+#itemDetails{
+    background-color: rgba(116, 114, 114, 0.133);
+    
+    padding: 20px;
+}
+#pagesPath{
+    display: none;
+    gap: 5px;
+}
+#detailsPic{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(129, 129, 129, 0.1);
+   
+}
+#detailsPic img{
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    transition: 0.5s ease-in-out;
+}
+
+#detailsPic img:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
 
 
+.deatilsCnt{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    gap: 30px;
+   
+}
 
+#itemDetailsCnt{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
 
 

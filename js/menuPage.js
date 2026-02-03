@@ -14,26 +14,27 @@ const mobileMenu = document.getElementById("mobileMenu");
 });
 
 
-
 //all the item that shows in menu page
 let itemsCnt = document.getElementById("itemsCnt")
 
 let items = [
-  {name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger' ,tags:'offers'},
-  {name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza , luanch' },
-  {name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
-  {name:'French Frice' , price:190 , pic:'../images/item4.png ', categorie:'under200', tags:''},
-  {name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger'},
-  {name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza'},
-  {name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
-  {name:'French Frice' , price:190 , pic:'../images/item4.png' , categorie:'under200', tags:''},
-  {name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger'},
-  {name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza'},
-  {name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
-  {name:'French Frice' , price:190 , pic:'../images/item4.png' , categorie:'under200', tags:'pizza'},
+  {id:1 , name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger' ,tags:'offers'},
+  {id:2 , name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza , luanch' },
+  {id:3 , name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
+  {id:4 , name:'French Frice' , price:190 , pic:'../images/item4.png ', categorie:'under200', tags:''},
+  {id:5 , name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger'},
+  {id:6 , name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza'},
+  {id:7 , name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
+  {id:8 , name:'French Frice' , price:190 , pic:'../images/item4.png' , categorie:'under200', tags:''},
+  {id:9 , name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger'},
+  {id:10, name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza'},
+  {id:11, name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
+  {id:12, name:'French Frice' , price:190 , pic:'../images/item4.png' , categorie:'under200', tags:'pizza'},
 
 ]
+//hide whole background when user click any item
 
+let wholePageBackground = document.getElementById("background")
 function render(update){
   itemsCnt.innerHTML= '';
 
@@ -42,10 +43,15 @@ function render(update){
     itemCtn.classList.add('items')
 
     itemCtn.innerHTML =
-    `<div id="item"><img src="${items.pic}"></div>
+    `<div id="item"><img src="${items.pic}" id="menuPic"></div>
     <span id="itemName"> ${items.name}</span>
     <span id="itemPrice">Price: ${items.price}.00</span>
     <button id="itemButton">Order Now</button>`
+
+    itemCtn.addEventListener("click", ()=>{
+      wholePageBackground.style.display='none'
+      showItemDetailes(items)
+    })
 
     itemsCnt.append(itemCtn)
   })
@@ -53,6 +59,61 @@ function render(update){
 
 
 render(items)
+
+
+let detailsContainer = document.getElementById("itemDetails");
+let itemPath = document.getElementById("itemPath")
+
+
+
+
+
+let quantity = 1
+
+let footer = document.querySelector('footer')
+let pagesPath = document.getElementById("pagesPath")
+function showItemDetailes(item){
+
+    footer.style.display='none'
+    pagesPath.style.display='flex'
+  let deatilsCnt = document.createElement("section")
+  deatilsCnt.classList.add("deatilsCnt")
+
+
+  
+  deatilsCnt.innerHTML=`
+ <div id="detailsPic"> <img src="${item.pic}"></div>
+
+ <main id="itemDetailsCnt">
+  <h1 id="detailesName">${item.name}</h1>
+  <h3 id="detailesPrice">Price: ${item.price}</h3>
+
+  <section id="ButtonsCnt">
+  <button id="decreaseQuantityBnt">-</button>
+  <span id="quantity">${quantity}</span>
+  <button id="increaseQuantityBnt">+</button>
+  </section>
+
+  <section>
+  <button>Buy Now</button>
+  <button>Add To Bukect</button>
+  </section>
+  
+  </main>
+  
+  `
+  itemPath.innerHTML=item.name
+  
+  detailsContainer.appendChild(deatilsCnt)
+
+    
+}
+
+
+
+
+
+
 
 
 //search item by name
