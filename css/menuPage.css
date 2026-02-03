@@ -278,6 +278,7 @@ aside{
     margin-bottom: 10px;
     border-radius: 7px;
 }
+
 #item:hover{
     cursor: pointer;
 
