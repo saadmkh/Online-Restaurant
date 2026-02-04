@@ -329,6 +329,7 @@ box-shadow: inset 0 0 0 2px #FF8900;
 
 /*mobile section when aside hide */
 #mobileSection{
+    display: none;
     padding-left: 10px;
     padding-top: 20px;
     padding-right: 10px;
@@ -342,6 +343,7 @@ box-shadow: inset 0 0 0 2px #FF8900;
     padding-left: 10px;
     font-size: 1rem;
     outline: none;
+    margin-right: 30px;
     margin-bottom: 10px;
 }
 #mobileSectionHeading{
@@ -358,7 +360,7 @@ box-shadow: inset 0 0 0 2px #FF8900;
     font-size: 0.80rem;
     padding: 10px;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgb(245, 243, 243);
     transition: 0.1s ease-in-out;
 }
 #mobileCategories span:hover{
@@ -547,9 +549,12 @@ box-shadow: inset 0 0 0 2px #FF8900;
 
 /*on mobile mode*/
 @media (max-width: 480px){
+    #mobileSection{
+        display: block;
+    }
     #background{
         padding: 0px;
-        padding-top: 50px;
+        padding-top: 10px;
     }
     aside{
     display: none;
