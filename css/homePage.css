@@ -1508,6 +1508,9 @@ li:nth-child(1){
     height: 200px;
 }
 .deal2{
+    border-radius: 5px;
+    padding: 5px;
+    
     display: flex;
     flex-direction: column;
     
