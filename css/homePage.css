@@ -1838,7 +1838,7 @@ h1{
         height: 100vh;
         position: absolute;
         top: 65px;
-        z-index: ;
+        z-index: 999;
 
     }
     #mobileMenu span{
@@ -1848,10 +1848,17 @@ h1{
         padding-bottom: 10px;
         transition: 0.1s ease-in-out;
     }
+    .mobileHover{
+        transition: 0.1s ease-in-out;
+    }
     #mobileMenu span:hover{
+        .mobileHover{
+            color: white;
+            font-size: 1.1rem;
+     
+        }
         /*background-color: rgb(225, 222, 222);
         color: #FF8900;*/
-        color: white;
         background-color: #FF8900;
         font-size: 1.1rem;
         

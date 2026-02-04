@@ -1,5 +1,4 @@
 
-
 //make categories scrollable 
 
   const container = document.getElementById('menuContainer');
@@ -37,9 +36,7 @@
 
 items.forEach(item => observer.observe(item));
 
-/*const body = document.querySelector('body')*/
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+
 
 
 
