@@ -134,33 +134,70 @@ function searchItem(e) {
 });
 
 
+const mobileCategoriesOption = document.querySelectorAll(".mobileCategoriesOption")
+const CategoriesOption = document.querySelectorAll(".CategoriesOption")
+
+
+
 //filterd by the categories
 //FULL MEAL CATEGORIE
-const fullMeal = document.getElementById("fullMeal").addEventListener("click", ()=>{
+CategoriesOption[0].addEventListener("click", ()=>{
+  sortFullMeal()
+
+})
+mobileCategoriesOption[0].addEventListener("click", ()=>{
+  sortFullMeal()
+
+})
+function sortFullMeal(){
   let sort = items.filter(f=> f.categorie == 'fullMeal')
   render(sort)
-  console.log(sort);
-  
-})
+}
 
 //OFFFERS CATEGORIE
-const offers = document.getElementById("offers").addEventListener("click", ()=>{
+CategoriesOption[1].addEventListener("click", ()=>{
+   sortOffers()
+})
+mobileCategoriesOption[1].addEventListener("click", ()=>{
+  sortOffers()
+
+})
+function sortOffers(){
+
   let sort = items.filter(f=> f.categorie == 'offers')
   render(sort)
   
-})
+}
+
 //Luanch CATEGORIE
-const luanch = document.getElementById("luanch").addEventListener("click", ()=>{
+CategoriesOption[3].addEventListener("click", ()=>{
+   sortLuanch()
+})
+mobileCategoriesOption[3].addEventListener("click", ()=>{
+  sortLuanch()
+
+})
+
+function sortLuanch(){
   let sort = items.filter(f=> f.categorie == 'luanch')
   render(sort)
+}
   
+//Under 200 items
+CategoriesOption[4].addEventListener("click", ()=>{
+   sortBYPrice()
 })
-//Under 200 items CATEGORIE
-const under200 = document.getElementById("under200").addEventListener("click", ()=>{
+mobileCategoriesOption[4].addEventListener("click", ()=>{
+  sortBYPrice()
+
+})
+
+function sortBYPrice(){
+
   let sort = items.filter(f=> f.categorie == 'under200')
   render(sort)
+}
   
-})
 
 
 
