@@ -117,18 +117,22 @@ function showItemDetailes(item){
 
 
 //search item by name
-const searchBar = document.getElementById("searchBar")
+const searchBar = document.getElementById("searchBar");
+const searchBarForMobile = document.getElementById("searchBarForMobile");
 
-searchBar.addEventListener('input', (e)=>{
- const searchTerms = e.target.value.toLowerCase();
- const filterdItems = items.filter(f=> f.name.toLowerCase().includes(searchTerms))
- 
- render(filterdItems)
- if(filterdItems.length == 0){
-  
- }
- 
-})
+function searchItem(e) {
+  const searchTerms = e.target.value.toLowerCase();
+  const filteredItems = items.filter(item =>
+    item.name.toLowerCase().includes(searchTerms)
+  );
+
+  render(filteredItems);
+}
+
+[searchBar, searchBarForMobile].forEach(input => {
+  input.addEventListener("input", searchItem);
+});
+
 
 //filterd by the categories
 //FULL MEAL CATEGORIE
