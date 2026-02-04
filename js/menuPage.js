@@ -34,6 +34,8 @@ let items = [
 ]
 //hide whole background when user click any item
 
+let mobileSection = document.getElementById("mobileSection")
+
 let wholePageBackground = document.getElementById("background")
 function render(update){
   itemsCnt.innerHTML= '';
@@ -49,6 +51,7 @@ function render(update){
     <button id="itemButton">Order Now</button>`
 
     itemCtn.addEventListener("click", ()=>{
+      mobileSection.style.display='none'
       wholePageBackground.style.display='none'
       showItemDetailes(items)
     })
@@ -74,12 +77,10 @@ let footer = document.querySelector('footer')
 let pagesPath = document.getElementById("pagesPath")
 function showItemDetailes(item){
 
-    footer.style.display='none'
-    pagesPath.style.display='flex'
+  footer.style.display='none'
+  pagesPath.style.display='flex'
   let deatilsCnt = document.createElement("section")
   deatilsCnt.classList.add("deatilsCnt")
-
-
   
   deatilsCnt.innerHTML=`
  <div id="detailsPic"> <img src="${item.pic}"></div>
@@ -94,9 +95,10 @@ function showItemDetailes(item){
   <button id="increaseQuantityBnt">+</button>
   </section>
 
-  <section>
-  <button>Buy Now</button>
-  <button>Add To Bukect</button>
+  <div>total price: <span id="totalPrice">${item.price}</span></div>
+  <section id="itemDetailsBtnSection">
+  <button class="itemDetailsBtns" >Buy Now</button>
+  <button class="itemDetailsBtns" >Add To Bukect</button>
   </section>
   
   </main>
@@ -105,6 +107,29 @@ function showItemDetailes(item){
   itemPath.innerHTML=item.name
   
   detailsContainer.appendChild(deatilsCnt)
+
+  // selectors
+  const decreaseBtn = document.getElementById("decreaseQuantityBnt");
+  const increaseBtn = document.getElementById("increaseQuantityBnt");
+  const quantityText = document.getElementById("quantity");
+  const totalPriceText = document.getElementById("totalPrice");
+
+    function updateUI() {
+    quantityText.textContent = quantity;
+    totalPriceText.textContent = item.price * quantity;
+  }
+
+  increaseBtn.addEventListener("click", () => {
+    quantity++;
+    updateUI();
+  });
+
+  decreaseBtn.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+      updateUI();
+    }
+  });
 
     
 }
@@ -199,8 +224,6 @@ function sortBYPrice(){
 }
   
 
-
-
 //items filterd by tags
 const burger = document.getElementById("burger").addEventListener("click", ()=>{
   let sort = items.filter(f=> f.tags == 'burger')
@@ -212,7 +235,6 @@ const pizza = document.getElementById("pizza").addEventListener("click", ()=>{
   render(sort)
   
 })
-
 
 const tagOffers = document.getElementById("tagOffers").addEventListener("click", ()=>{
   let sort = items.filter(f=> f.tags ==  f.tags=='offers' )
