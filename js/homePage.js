@@ -1,3 +1,5 @@
+
+
 //make categories scrollable 
 
   const container = document.getElementById('menuContainer');
@@ -43,41 +45,20 @@ const mobileMenu = document.getElementById("mobileMenu");
 
 
 
-menuBtn.addEventListener("click", () => {
-      if (mobileMenu.style.display === "flex") {
-       
-        mobileMenu.style.display = "none";
-      } 
-      else {
-        mobileMenu.style.display = "flex";
-      }
-
-      let logo = document.getElementById("logo")
-      
-      logo.addEventListener('click', ()=>{
-          location='homePage.html'
-      })
-
-
-    });
 
 
 
 
 
 
+//timer
+let totalTime = 10 * 24 * 60 * 60; // 10 days in seconds
 
-
-
-
-  //timer
-  let totalTime = 10 * 24 * 60 * 60; // 10 days in seconds
-
-  const daysEl = document.getElementById("days");
-  const hoursEl = document.getElementById("hours");
-  const minutesEl = document.getElementById("minutes");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
   const secondsEl = document.getElementById("seconds");
-
+  
   const timer = setInterval(() => {
     if (totalTime <= 0) {
       clearInterval(timer);
@@ -93,6 +74,18 @@ menuBtn.addEventListener("click", () => {
     hoursEl.textContent = String(hours).padStart(2, '0');
     minutesEl.textContent = String(minutes).padStart(2, '0');
     secondsEl.textContent = String(seconds).padStart(2, '0');
-
+    
     totalTime--;
   }, 1000);
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+        menuBtn.addEventListener("click", () => {
+          if (mobileMenu.style.display === "flex") {
+            mobileMenu.style.display = "none";
+          } else {
+            mobileMenu.style.display = "flex";
+          }
+    
+    
+    
+    });

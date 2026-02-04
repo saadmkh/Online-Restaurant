@@ -1828,7 +1828,7 @@ h1{
 
 
     #mobileMenu{
-        display: none;
+        display: flex;
         flex-direction: column;
         /*background-color: rgb(245, 245, 245);*/
         backdrop-filter: blur(20px);
@@ -1838,7 +1838,7 @@ h1{
         height: 100vh;
         position: absolute;
         top: 65px;
-        z-index: 99999999999999999999999;
+        z-index: ;
 
     }
     #mobileMenu span{
