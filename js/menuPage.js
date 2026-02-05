@@ -46,24 +46,27 @@ function render(update){
     let itemCtn = document.createElement('div');
     itemCtn.classList.add('items')
 
+    
     itemCtn.innerHTML =
     `<div id="item"><img src="${items.pic}" id="menuPic"></div>
     <span id="itemName"> ${items.name}</span>
     <span id="itemPrice">Price: ${items.price}.00</span>
-    <button id="itemButton">Order Now</button>`
+    <button id="itemButton">Get Now</button>`
 
     itemCtn.addEventListener("click", ()=>{
       mobileSection.style.display='none'
       wholePageBackground.style.display='none'
       showItemDetailes(items)
-    })
 
+    })
+    
     itemsCnt.append(itemCtn)
   })
 }
 
 
 render(items)
+
 
 
 let detailsContainer = document.getElementById("itemDetails");
@@ -100,12 +103,19 @@ function showItemDetailes(item){
   <div>total price: <span id="totalPrice">${item.price}</span></div>
   <section id="itemDetailsBtnSection">
   <button class="itemDetailsBtns" >Buy Now</button>
-  <button class="itemDetailsBtns" >Add To Bukect</button>
+  <button class="itemDetailsBtns" id="cartBtn" >Add To Bukect</button>
   </section>
   
   </main>
   
   `
+  const cartBtn = deatilsCnt.querySelector("#cartBtn")
+
+cartBtn.addEventListener("click", () => {
+  addToCart(item, quantity)
+})
+
+
   itemPath.innerHTML=item.name
   
   detailsContainer.appendChild(deatilsCnt)
@@ -117,15 +127,11 @@ function showItemDetailes(item){
   const totalPriceText = document.getElementById("totalPrice");
 
     function updateUI() {
-    if(quantity > 10){
-      quantityText.textContent = quantity;
-      totalPriceText.textContent = item.price * quantity - 500
-    }
-    else{
+
           quantityText.textContent = quantity;
     totalPriceText.textContent = item.price * quantity;
 
-    }
+    
   }
 
   increaseBtn.addEventListener("click", () => {
@@ -257,3 +263,40 @@ const tagLuanch = document.getElementById("tagLuanch").addEventListener("click",
   
 })
 
+
+
+
+
+let cartSectionOnSideBar = document.getElementById("cartSectionOnSideBar")
+
+ let cart = []
+
+function addToCart(item, quantity) {
+  const existingItem = cart.find(i => i.id === item.id)
+
+  if (existingItem) {
+    existingItem.quantity += quantity
+  } else {
+    cart.push({
+      ...item,
+      quantity
+    })
+  }
+  cartSectionOnSideBar.innerHTML=`
+   <div class="cartItem">
+    <img src="${item.pic}" alt="${item.name}">
+
+    <section id="nameCnt">
+    <span id="cartItemName">${item.name}</span>
+    <span>${item.description}</span>
+    <section>
+
+    <section id="section2">
+    <span>Total Price: ${item.price * quantity}</span>
+    </section>
+    </div>
+
+`
+
+
+}
