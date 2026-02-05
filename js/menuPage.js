@@ -18,7 +18,9 @@ const mobileMenu = document.getElementById("mobileMenu");
 let itemsCnt = document.getElementById("itemsCnt")
 
 let items = [
-  {id:1 , name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger' ,tags:'offers'},
+  {id:1 , name:'Cheeze Burger' , price:450 , pic:'../images/item1.png', categorie:'offers'  , tags:'burger' ,tags:'offers',
+    description:'thsi is the best burger you ever eat'
+  },
   {id:2 , name:'Cheeze Pizza' , price:1300 , pic:'../images/item2.png', categorie:'luanch'  , tags:'pizza , luanch' },
   {id:3 , name:'Zinger Burger' , price:600 , pic:'../images/item3.png', categorie:'fullMeal', tags:'burger'},
   {id:4 , name:'French Frice' , price:190 , pic:'../images/item4.png ', categorie:'under200', tags:''},
@@ -87,8 +89,8 @@ function showItemDetailes(item){
 
  <main id="itemDetailsCnt">
   <h1 id="detailesName">${item.name}</h1>
+  <span id="itemDes">${item.description}</span>
   <h3 id="detailesPrice">Price: ${item.price}</h3>
-
   <section id="ButtonsCnt">
   <button id="decreaseQuantityBnt">-</button>
   <span id="quantity">${quantity}</span>
@@ -115,8 +117,15 @@ function showItemDetailes(item){
   const totalPriceText = document.getElementById("totalPrice");
 
     function updateUI() {
-    quantityText.textContent = quantity;
+    if(quantity > 10){
+      quantityText.textContent = quantity;
+      totalPriceText.textContent = item.price * quantity - 500
+    }
+    else{
+          quantityText.textContent = quantity;
     totalPriceText.textContent = item.price * quantity;
+
+    }
   }
 
   increaseBtn.addEventListener("click", () => {
