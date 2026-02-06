@@ -109,11 +109,7 @@ function showItemDetailes(item){
   </main>
   
   `
-  const cartBtn = deatilsCnt.querySelector("#cartBtn")
-
-cartBtn.addEventListener("click", () => {
-  addToCart(item, quantity)
-})
+ 
 
 
   itemPath.innerHTML=item.name
@@ -267,36 +263,4 @@ const tagLuanch = document.getElementById("tagLuanch").addEventListener("click",
 
 
 
-let cartSectionOnSideBar = document.getElementById("cartSectionOnSideBar")
 
- let cart = []
-
-function addToCart(item, quantity) {
-  const existingItem = cart.find(i => i.id === item.id)
-
-  if (existingItem) {
-    existingItem.quantity += quantity
-  } else {
-    cart.push({
-      ...item,
-      quantity
-    })
-  }
-  cartSectionOnSideBar.innerHTML=`
-   <div class="cartItem">
-    <img src="${item.pic}" alt="${item.name}">
-
-    <section id="nameCnt">
-    <span id="cartItemName">${item.name}</span>
-    <span>${item.description}</span>
-    <section>
-
-    <section id="section2">
-    <span>Total Price: ${item.price * quantity}</span>
-    </section>
-    </div>
-
-`
-
-
-}
