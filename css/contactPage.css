@@ -1,0 +1,375 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgba(116, 114, 114, 0.133);
+    text-transform: capitalize;
+    color: rgb(17, 16, 16);
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+    #mobileMenu{
+        display: none;
+    }
+    #settingsIcons{
+            display: none;
+        }
+    header{
+        background-color: rgb(245, 245, 245);
+        display: flex;
+        justify-content: space-between;
+        height: 45px;
+        align-items: center;
+        padding: 10px;
+        padding-left: 0px;
+        margin-left: 0px;
+        position: relative;
+    }
+
+    #logo{
+        margin-left: 30px;
+        font-size: 1.9rem;
+        position: absolute;
+        font-weight: bold;
+        color: #FF8900;
+        cursor: pointer;
+    }
+
+    nav{
+            width: 380px;
+            display: flex;
+            font-size: 1.1rem;
+            justify-content: space-evenly;
+    }
+
+    nav span:hover , a:hover{
+        cursor: pointer;
+        color: #FF8900;
+    }
+    a{
+        color: rgb(17, 16, 16);
+        text-decoration: none;
+
+
+    }
+
+    @media (max-width: 720px){
+        #logo{
+        margin-left: 20px;
+    }
+        nav{
+        width: 420px;
+        font-size: 1.1rem;
+    }
+
+    }
+
+    @media (max-width: 615px){
+        nav{
+            width: 400px;
+            font-size: 1.1rem;
+    }
+
+    }
+
+    @media (max-width: 560px){
+        header{
+        padding-left: 0px;
+    }
+
+        nav{
+            width: 380px;
+            font-size: 1rem;
+    }
+
+
+    }
+
+    @media (max-width: 530px){
+        nav{
+        width: 350px;
+
+
+    }
+    }
+
+    @media (max-width: 480px){
+        header{
+            justify-content: left;
+            position: relative;
+            justify-content: center;
+    }
+        .hamburger {
+            position: absolute;
+            width: 30px;
+            left: 20px;
+            cursor: pointer;
+    }
+
+        .hamburger span {
+          display: block;
+          height: 3px;
+          background: #141414;
+          margin: 6px 0;
+          border-radius: 2px;
+    }
+
+        #logo{
+            text-align: center;
+        justify-self: center;
+    }
+        nav{
+        display: none;
+    }
+    #mobileMenu{
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        width: 200px;
+        padding-top: 20px;
+        gap: 10px;
+        height: 100vh;
+        position: absolute;
+        top: 65px;
+        z-index: 99999999999999999999999;
+
+    }
+    #mobileMenu span{
+        cursor: pointer;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+        transition: 0.1s ease-in-out;
+    }
+    .mobileHover{
+         transition: 0.1s ease-in-out;
+
+    }
+    #mobileMenu span:hover{
+        .mobileHover{
+            color: white;
+            font-size: 1.1rem;
+     
+        }
+        /*background-color: rgb(225, 222, 222);
+        color: #FF8900;*/
+        color: white;
+        background-color: #FF8900;
+        font-size: 1.1rem;
+        
+        
+    }
+
+}
+/*header ends here*/
+
+#contactBenner{
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.032);
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    
+}
+#bennerTextSection{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-top: 80px;
+    
+}
+#bennerTextSection h1{
+    color: #FF8900;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin: 0px;
+    padding: 0px;
+}
+#bennerTextSection p{
+    color: #626161;
+}
+#bennerTextSection button{
+    height: 35px;
+    width: 120px;
+    border: none;
+    background-color: #FF8900;
+    color: white;
+    font-size: 1.05rem;
+    font-weight: normal;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#bennerImageSection{
+    width: 100%;
+    display: flex;
+    
+    padding-right: 100px;
+    justify-content: center;
+ 
+}
+#bennerImageSection div{
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/contactBennerImage.png);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+/*footer start from here*/
+    footer{
+        background-color: rgb(216, 216, 216);
+        margin-top: 100px;
+        height: 350px;
+        padding: 30px;
+        display: flex;
+        color:#333131;
+        justify-content: space-between;
+        padding-right: 50px;
+    }
+    #footerLogo{
+        padding: 0px;
+        margin: 0px;
+        font-size: 2.5rem;
+    }
+    #footerParagraph{
+        color:#3b3b3b;
+        width: 350px;
+        font-size: 1rem;
+    }
+    #CompanyContainer , #socialMediaConatiner , #CompanyContainer2{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+
+    }
+    .companyOptions{
+        color:#3b3b3b;
+
+    }
+    .companyOptions:hover{
+        color: #FF8900;
+        cursor: pointer;;
+
+    }
+      h3{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    @media (max-width: 890px){
+        #footerLogo{
+            font-size: 2rem;
+        }
+        #footerParagraph{
+            width: 320px;
+            font-size: 0.95rem;
+        }
+            #CompanyContainer , #socialMediaConatiner , #CompanyContainer2{
+        margin-top: 0px;
+      
+
+    }
+    }
+
+    @media (max-width: 820px){
+        footer{
+        padding-right: 20px;
+        padding-left: 20px;
+        }
+        h3{
+            font-size: 1rem;
+        }
+        .companyOptions{
+            font-size: 0.95rem;
+
+        }
+    }
+
+    @media (max-width: 720px){
+        footer{
+        padding-bottom: 100px;
+        margin-top: 100px;
+        height: 450px;
+        display: grid;
+        justify-content: left;
+        text-align: left;
+        justify-content: space-around;
+        gap: 10px;
+        padding-right: 0px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+        #CompanyContainer2{       
+            gap: 20px;
+            justify-self: left;
+            
+        }
+        #CompanyContainer , #socialMediaConatiner , #CompanyContainer2{
+    
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+
+    }
+    h3{
+        padding: 0px;
+        margin: 0px;
+    }
+
+        
+    }
+
+    @media (max-width: 470px){
+        footer{
+            padding-bottom: 30px;
+        margin-top: 100px;
+        height: 420px;
+        display: grid;
+        justify-content: left;
+        text-align: left;
+        justify-items: left;
+        justify-content: space-around;
+        gap: 10px;
+        
+        padding-right: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    #footerParagraphCnt{
+        grid-column: span 3;
+    }
+        #footerLogo{
+        font-size: 2rem;
+        color: #FF8900;
+    }
+    #footerParagraph{
+        width: 100%;
+        color:#6b6b6b;
+        font-size: 0.80rem;
+    }
+        #CompanyContainer2{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        }
+     .companyOptions{
+        color:#424242;
+     }
+     h3{
+        color: #424242;
+     }   
+    }
+    
+/*footer end  here*/
