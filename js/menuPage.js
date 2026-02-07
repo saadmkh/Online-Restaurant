@@ -69,6 +69,7 @@ render(items)
 
 
 
+
 let detailsContainer = document.getElementById("itemDetails");
 let itemPath = document.getElementById("itemPath")
 
@@ -80,6 +81,8 @@ let quantity = 1
 
 let footer = document.querySelector('footer')
 let pagesPath = document.getElementById("pagesPath")
+
+
 function showItemDetailes(item){
 
   footer.style.display='none'
@@ -109,8 +112,8 @@ function showItemDetailes(item){
   </main>
   
   `
- 
 
+ 
 
   itemPath.innerHTML=item.name
   
@@ -124,7 +127,7 @@ function showItemDetailes(item){
 
     function updateUI() {
 
-          quantityText.textContent = quantity;
+    quantityText.textContent = quantity;
     totalPriceText.textContent = item.price * quantity;
 
     
@@ -257,6 +260,32 @@ const tagLuanch = document.getElementById("tagLuanch").addEventListener("click",
   let sort = items.filter(f=> f.tags ==  f.tags=='luanch' )
   render(sort)
   
+})
+
+
+
+
+
+
+
+
+
+
+let paymentBtn = document.querySelectorAll(".paymentBtn")
+let cashOndeleviry = document.getElementById("cashOndeleviry")
+
+let creditCard = document.getElementById("creditCard")
+
+paymentBtn[0].addEventListener("click", ()=>{
+  cashOndeleviry.style.display="flex"
+  creditCard.style.display="none"
+})
+
+paymentBtn[1].addEventListener("click", ()=>{
+  cashOndeleviry.style.display="none"
+  creditCard.style.display="flex"
+  
+ 
 })
 
 

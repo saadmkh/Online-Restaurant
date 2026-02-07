@@ -11,6 +11,7 @@ body{
     user-select: none;
     padding: 0;
     margin: 0;
+    position: relative;
 }
     #mobileMenu{
         display: none;
@@ -935,3 +936,123 @@ box-shadow: inset 0 0 0 2px #FF8900;
     }
     
 /*footer end  here*/
+
+
+
+
+#wholeFormContainer{
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 450px;
+  height: 550px;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+#formCnt{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+#totalAmount{
+  text-align: center;
+  margin-bottom: 10px;
+  color: #FF8900;
+}
+#paymentMethodHeading{
+  text-align: center;
+}
+#lineBreak{
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#paymentButtons{
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+#paymentButtons button{
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 110px;
+
+}
+
+
+#fullName {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  column-gap: 50px; /* gap between columns */
+  max-width: 600px; /* optional: container width */
+  margin: 0 auto; /* center it */
+}
+
+.field {
+  margin-top: 20px;
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+}
+
+.field input {
+  width: 100%; /* fill the column */
+  height: 35px;
+  outline: none;
+  padding-left: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* ensures padding doesn't break width */
+}
+
+
+
+
+#gmailPhone{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  column-gap: 50px; /* gap between columns */
+  max-width: 600px; /* optional: container width */
+  margin: 0 auto; /* center it */
+}
+
+#creditCard{
+  display: none;
+}
+#submitButton{
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: #FF8900;
+  border-radius: 5px;
+  color: white;
+  margin-top: 50px;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+#paymentButtons button ,#submitButton{
+    transition: 0.2s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+#paymentButtons button:hover ,#submitButton:hover{
+  background-color: #FF8900;
+  color: white;
+}
+
+#paymentButtons button:active ,#submitButton:active{
+  transform: scale(0.95);
+  transition: 0.2s ease-in-out;
+}
+
+.afterclick{
+  background-color: #FF8900;
+  color: white;
+}
